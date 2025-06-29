@@ -1,6 +1,6 @@
 flask
-pillow
+pillow 
 qrcode[pil]
 requests
-matplotlib
-numpy
+replicate
+python-dotenv

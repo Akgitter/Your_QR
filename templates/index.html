@@ -8,10 +8,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>Qr code Generator</h1>
-        <p>Create beautiful QRs with your custom peronalization</p>
+        <h1>QR Code Generator</h1>
+        <p>Create beautiful QRs with your custom personalization</p>
 
-        <form method="PPST">
+        {% if error %}
+            <div class="error" style="color: red; margin-bottom: 15px;">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form method="POST">
             <div class="form-group">
                 <label for="url">Destination URL</label>
                 <input type="text" id="url" name="url" placeholder="https://myinstagram.com" required>
@@ -20,18 +26,20 @@
             <div class="form-group">
                 <label for="description">Custom Input</label>
                 <textarea id="description" name="description" placeholder="Enter your custom text here..." required></textarea>
+            </div>
+            <button type="submit">Generate</button>
         </form>
 
         {% if qr_image %}
             <div class="output">
-                <h2>Your Persona QR Code</h2>
-                <div class="qr-container"></div>
+                <h2>Your Personalized QR Code</h2>
                 <img src="{{ url_for('static', filename='qr_codes/' + qr_image) }}" alt="Personal QR Code">
+                <br>
+                <a href="{{ url_for('download', filename=qr_image) }}" download>
+                    <button style="margin-top: 10px;">Download</button>
+                </a>
             </div>
         {% endif %}
-
-
     </div>
-    
 </body>
 </html>

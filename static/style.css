@@ -31,7 +31,7 @@ p {
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 label {
@@ -101,12 +101,12 @@ buton:hover {
     word-break: break-all;
 }
 
-.personal-message {
+/* .personal-message {
     font-style: italic;
     color: #2c3e50;
     margin: 1rem 0;
 
-}
+} */
 
 .download-btn {
     display: inline-block;
