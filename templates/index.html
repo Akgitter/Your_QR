@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your_Qr</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Qr code Generator</h1>
+        <p>Create beautiful QRs with your custom peronalization</p>
+
+        <form method="PPST">
+            <div class="form-group">
+                <label for="url">Destination URL</label>
+                <input type="text" id="url" name="url" placeholder="https://myinstagram.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Custom Input</label>
+                <textarea id="description" name="description" placeholder="Enter your custom text here..." required></textarea>
+        </form>
+
+        {% if qr_image %}
+            <div class="output">
+                <h2>Your Persona QR Code</h2>
+                <div class="qr-container"></div>
+                <img src="{{ url_for('static', filename='qr_codes/' + qr_image) }}" alt="Personal QR Code">
+            </div>
+        {% endif %}
+
+
+    </div>
+    
+</body>
+</html>
