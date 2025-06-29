@@ -2,3 +2,5 @@ flask
 pillow
 qrcode[pil]
 requests
+matplotlib
+numpy
